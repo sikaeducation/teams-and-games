@@ -1,38 +1,13 @@
 ## Teams & Games
 
-You have been given a set of CSV files representing data for football teams & games, and have been asked to build a RESTful API for them.
+There are 2 CSV files in the `/data` folder containing data for teams & games. You need to build a RESTful API for interacting with this data.
 
-### Required Routes
-
-* `GET`, `POST`, `PUT`, `PATCH`, and `DELETE` for games and teams
-* For a given team, list all of the games they play in
-
-### Response Format
-
-```json
-{
-    "data": {
-        "pluralResourceNames": [{
-            "id": 1,
-            "attributeName": "attributeValue",
-            "relatedId": 1
-        },{
-            "id": 2,
-            "attributeName": "attributeValue",
-            "relatedId": 1
-        }]
-    },
-    "included": {
-        "singularRelatedResource": {
-            "id": 1,
-            "attributeName": "attributeValue"
-        }
-    }
-}
-```
-
-### Notes
-
-* Your application should start listening for requests in `/bin/index.js`, and your application logic should live in `app.js` (or be otherwise imported into it)
-* You may use the included tests to check your work with `npm test`
-* You must deploy your API
+* Build routes to create, read, update, delete, and list data for both teams and games.
+* Data should persist in a database.
+  * The schema should be implemented with migrations.
+  * The data in the CSV files should be loaded with seeds.
+* For each team, include all of that team's games the read and list responses.
+* For each game, include all of that game's teams the read and list responses.
+* Handle errors appropriately.
+* Use appropriate status codes.
+* Deploy the API.
